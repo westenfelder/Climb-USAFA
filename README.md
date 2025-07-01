@@ -4,5 +4,5 @@ Website for The USAFA Adventure Guide
 
 ## Building
 ```bash
-hugo serve
+hugo server --disableFastRender
 ```
