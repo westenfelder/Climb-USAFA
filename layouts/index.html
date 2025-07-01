@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ .Site.Title }}</title>
+    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
+    <style>
+        /* Basic Reset */
+        body,
+        h1,
+        p,
+        a,
+        div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            zoom: 0.9;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #2c3e50;
+        }
+
+        /* Image Section */
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            min-width: 300px;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Content Section */
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            background-color: #2c3e50;
+        }
+
+        .content-section h2 {
+            font-size: 2.0em;
+            margin-bottom: 10px;
+            color: #ecf0f1;
+        }
+
+        .content-section .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #bdc3c7;
+        }
+
+        /* Buttons Container */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Button Styling */
+        .button {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: white;
+            background-color: #3498db;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Text */
+        .footer-text {
+            margin-top: 50px;
+            font-size: 0.95em;
+            color: #7f8c8d;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column-reverse;
+                margin: 0;
+                border-radius: 0;
+                min-height: 100vh;
+            }
+
+            .image-section {
+                padding: 15px 10px;
+                width: 100%;
+            }
+
+            .content-section {
+                padding: 30px 20px;
+                align-items: center;
+                text-align: center;
+            }
+
+            .content-section h2 {
+                font-size: 2.2em;
+            }
+
+            .content-section .subtitle {
+                font-size: 1em;
+                margin-bottom: 30px;
+            }
+
+            .buttons {
+                max-width: 280px;
+            }
+
+            .footer-text {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-section {
+                padding: 10px 5px;
+            }
+
+            .content-section {
+                padding: 20px 15px;
+            }
+
+            .content-section h2 {
+                font-size: 1.8em;
+            }
+
+            .content-section .subtitle {
+                font-size: 0.9em;
+            }
+
+            .button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="{{ .Site.BaseURL }}images/cover.png" alt="The USAFA Adventure Guide Book Cover">
+        </div>
+        <div class="content-section">
+            <h2>The USAFA Adventure Guide</h2>
+            <p class="subtitle">This guidebook covers rock climbing, bouldering, ice climbing, mountain biking, skiing,
+                highlining, trail running, and fishing in Pike National Forest bordering the U.S. Air Force Academy.</p>
+            <div class="buttons">
+                <a href="/downloads/The_USAFA_Adventure_Guide_Westenfelder.pdf" class="button" download>Free
+                    Download</a>
+                <a href="https://www.blurb.com/bookstore/invited/9924787/435aa85a5a148adc2d0d375b31d61c0229e600dd"
+                    class="button">Purchase Softcover</a>
+                <a href="https://www.mountainproject.com/area/106937097/air-force-academy" class="button">Mountain
+                    Project</a>
+            </div>
+            <p class="footer-text">&copy; {{ now.Year }} Finn Westenfelder. ISBN: 979-8-21-123320-1</p>
+        </div>
+    </div>
+</body>
+
+</html>
